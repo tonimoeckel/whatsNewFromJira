@@ -1,0 +1,19 @@
+{
+  "name": "whats-new-from-jira",
+  "version": "1.0.0",
+  "description": "Create a readme.md with issues from Jira",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tonimoeckel/whatsNewFromJira.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tonimoeckel/whatsNewFromJira/issues"
+  },
+  "homepage": "https://github.com/tonimoeckel/whatsNewFromJira#readme"
+}
