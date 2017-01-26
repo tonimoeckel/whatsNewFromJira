@@ -1,0 +1,10 @@
+{
+  "host": "0.0.0.0",
+  "port": 443,
+  "protocol": "https",
+  "auth": {
+    "username": "your.username@mail.com"
+  },
+  "filter": 11602,
+  "export": "./whatsnew.md"
+}

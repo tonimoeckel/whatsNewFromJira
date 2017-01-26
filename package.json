@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/tonimoeckel/whatsNewFromJira/issues"
   },
-  "homepage": "https://github.com/tonimoeckel/whatsNewFromJira#readme"
+  "homepage": "https://github.com/tonimoeckel/whatsNewFromJira#readme",
+  "dependencies": {
+    "jira-connector": "^2.6.0",
+    "underscore": "^1.8.3"
+  }
 }
