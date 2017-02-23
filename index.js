@@ -29,30 +29,47 @@ if ((config.auth && (config.auth.username || config.auth.base64)) || process.env
 
 var jira = new JiraClient(connectConfig);
 
-jira.filter.getFilter({
-    filterId: process.env.FILTER || config.filter
-}, function(err, result) {
-
-    if (err) {
-        console.error(err);
-        return;
-    }
-
-    jira.search.search({
-        method: 'GET',
-        jql: result.jql
-    }, function(err, searchResult) {
-        if (err) {
-            console.error(err);
-            return;
-        }
-
-        createMarkdown(searchResult.issues);
-
-    });
 
 
-});
+if (process.env.JQL){
+
+	requestJQL(process.env.JQL);
+
+}else {
+	jira.filter.getFilter({
+		filterId: process.env.FILTER || config.filter
+	}, function(err, result) {
+
+		if (err) {
+			console.error(err);
+			return;
+		}
+
+		requestJQL(result.jql);
+
+
+	});
+}
+
+
+
+function requestJQL(jql){
+
+	jira.search.search({
+		method: 'GET',
+		jql:jql
+	}, function(err, searchResult){
+		if (err){
+			console.error(err);
+			return;
+		}
+
+		createMarkdown(searchResult.issues);
+
+	});
+
+}
+
 
 /**
  *
